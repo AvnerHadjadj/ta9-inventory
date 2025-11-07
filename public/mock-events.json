@@ -1,0 +1,8 @@
+[
+    { "id": 1, "color": "#59E097", "name": "Car accident", "description": "", "createdAt": "2021-02-03T12:00:00.000Z", "lastUpdatedAt": "2021-02-03T12:00:00.000Z", "createdBy": "Ori Lugasi"},
+    { "id": 2, "color": "#FF1CE2", "name": "Human trafficking for prostitution", "description": "", "createdAt": "2021-01-26T12:00:00.000Z", "lastUpdatedAt": "2021-01-26T12:00:00.000Z", "createdBy": "Ran Shim"},
+    { "id": 3, "color": "#AD0000", "name": "Murder", "description": "", "createdAt": "2021-10-16T12:00:00.000Z", "lastUpdatedAt": "2021-10-16T12:00:00.000Z", "createdBy": "Chen Meir"},
+    { "id": 4, "color": "#FF6C00", "name": "Suspect", "description": "", "createdAt": "2021-09-01T12:00:00.000Z", "lastUpdatedAt": "2021-12-24T12:00:00.000Z", "createdBy": "Or Bar"},
+    { "id": 5, "color": "#FFBA00", "name": "Terrorist", "description": "", "createdAt": "2021-11-30T12:00:00.000Z", "lastUpdatedAt": "2021-11-30T12:00:00.000Z", "createdBy": "Chen Meir"},
+    { "id": 6, "color": "#FF0000", "name": "Terrorist attack", "description": "", "createdAt": "2020-08-09T12:00:00.000Z", "lastUpdatedAt": "2021-02-03T12:00:00.000Z", "createdBy": "Or Bar"}
+]

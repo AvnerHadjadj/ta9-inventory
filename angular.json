@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ta9",
       "architect": {
         "build": {
           "builder": "@angular/build:application",

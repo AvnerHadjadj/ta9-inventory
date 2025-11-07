@@ -1,0 +1,9 @@
+<button (click)="addEvent()">Add event</button>
+
+@for (event of store.events(); track event.id) {
+    <pre>{{ event | json }}</pre>
+}
+
+@empty {
+    <pre>No events found</pre>
+}
