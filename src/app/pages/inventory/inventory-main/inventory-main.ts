@@ -13,6 +13,21 @@ import { CommonModule } from '@angular/common';
 export default class InventoryMain {
   readonly store = inject(InventoryStore);
 
+  //   id: number;
+  // color: string;
+  // name: string;
+  // description: string;
+  // createdAt: Date;
+  // lastUpdatedAt: Date;
+  // createdBy: string;
+  eventColumns = [
+    { field: 'color', header: 'Color' },
+    { field: 'name', header: 'Name' },
+    { field: 'createdAt', header: 'Create Date' },
+    { field: 'lastUpdatedAt', header: 'Last Update' },
+    { field: 'createdBy', header: 'Created By' }
+  ];
+  
   addEvent() {
     this.store.createNewEvent('#000000', 'New Event', '');
   }

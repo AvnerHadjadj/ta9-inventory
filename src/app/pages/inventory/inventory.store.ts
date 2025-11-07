@@ -80,7 +80,9 @@ export const InventoryStore = signalStore(
       patchState(store, { currentPage: pageNumber });
     },
 
-    sortBy(columnName: string, ascending: boolean): void {
+    sortBy(columnName: string): void {
+      const ascending = store.sortByColumn() !== columnName;
+
       patchState(store, {
         sortByColumn: columnName,
         sortAscending: ascending,

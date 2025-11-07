@@ -1,9 +1,32 @@
-<button (click)="addEvent()">Add event</button>
+<div class="flex-col">
+    <div class="flex-row">
+        <h1 class="ta9-heading-1">Management Tool</h1>
 
-@for (event of store.events(); track event.id) {
-    <pre>{{ event | json }}</pre>
-}
+        <div class="actions">
+            <button class="btn-icon">grid</button>
+            <button class="btn-icon">list</button>
+            <button class="btn-icon" (click)="addEvent()">add</button>
+        </div>
+    </div>
 
-@empty {
-    <pre>No events found</pre>
-}
+    <input type="text" placeholder="Find by name..." [value]="store.searchByName()" (input)="store.setSearchByName($event.target.value)" />
+
+    <div class="flex-col list">
+        <div class="flex-row list-headers">
+            @for (col of eventColumns; track col.field) {
+
+                <div class="header" (click)="store.sortBy(col.field)">
+                    {{ col.header }}
+                </div>
+
+            }
+        </div>
+        @for (event of store.processedEvents(); track event.id) {
+
+            <div class="flex-row">
+                <pre>{{ event | json }}</pre>
+            </div>
+
+        }
+    </div>
+</div>

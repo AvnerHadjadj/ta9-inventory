@@ -1,0 +1,91 @@
+@font-face {
+    font-family:    "Helvetica Neue";
+    font-style:     var(--ta9-font-style-normal);
+    font-weight:    var(--ta9-font-weight-300);
+    src:            url('../../../public/fonts/helvetica-neue/HelveticaNeueMedium.otf');
+}
+@font-face {
+    font-family:    "Helvetica Neue";
+    font-style:     var(--ta9-font-style-normal);
+    font-weight:    var(--ta9-font-weight-bold);
+    src:            url('../../../public/fonts/helvetica-neue/HelveticaNeueBold.otf');
+} 
+@font-face {
+    font-family:    "Helvetica Neue";
+    font-style:     var(--ta9-font-style-normal);
+    font-weight:    var(--ta9-font-weight-normal);
+    src:            url('../../../public/fonts/helvetica-neue/HelveticaNeueRoman.otf');
+} 
+@font-face {
+    font-family:    "Helvetica Neue";
+    font-style:     var(--ta9-font-style-italic);
+    font-weight:    var(--ta9-font-weight-100);
+    src:            url('../../../public/fonts/helvetica-neue/HelveticaNeueThinItalic.otf');
+} 
+@font-face {
+    font-family:    "Helvetica Neue";
+    font-style:     var(--ta9-font-style-normal);
+    font-weight:    var(--ta9-font-weight-medium);
+    src:            url('../../../public/fonts/helvetica-neue/HelveticaNeueMedium.otf');
+} 
+
+/* Character Styles */
+.ta9-character-style-1 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-normal);
+    font-weight:        var(--ta9-font-weight-300);
+    font-size:          var(--ta9-font-size-20);
+    line-height:        var(--ta9-line-spacing-24);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-000000);
+}
+
+.ta9-character-style-2 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-normal);
+    font-weight:        var(--ta9-font-weight-bold);
+    font-size:          var(--ta9-font-size-20);
+    line-height:        var(--ta9-line-spacing-25);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-007af9);
+}
+
+.ta9-character-style-3 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-normal);
+    font-weight:        var(--ta9-font-weight-300);
+    font-size:          var(--ta9-font-size-20);
+    line-height:        var(--ta9-line-spacing-24);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-797979);
+}
+
+.ta9-character-style-4 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-normal);
+    font-weight:        var(--ta9-font-weight-normal);
+    font-size:          var(--ta9-font-size-16);
+    line-height:        var(--ta9-line-spacing-18);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-000000);
+}
+
+.ta9-character-style-5 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-italic);
+    font-weight:        var(--ta9-font-weight-100);
+    font-size:          var(--ta9-font-size-18);
+    line-height:        var(--ta9-line-spacing-22);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-000000);
+}
+
+.ta9-character-style-6 {
+    font-family:        var(--ta9-font-family-helvetica-neue);
+    font-style:         var(--ta9-font-style-normal);
+    font-weight:        var(--ta9-font-weight-medium);
+    font-size:          var(--ta9-font-size-20);
+    line-height:        var(--ta9-line-spacing-25);
+    letter-spacing:     var(--ta9-character-spacing-0);
+    // color:              var(--ta9-color-0e4f6e);
+}
