@@ -8,7 +8,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { InventoryService } from './inventory-service';
-import { InventoryEvent, InventoryStoreState } from './inventory.model';
+import { InventoryEvent, InventoryStoreState, VIEW_MODE } from './inventory.model';
 
 const initialState: InventoryStoreState = {
   events: [],
@@ -18,6 +18,7 @@ const initialState: InventoryStoreState = {
   sortAscending: true,
   searchByName: '',
   isCreatePanelVisible: false,
+  viewMode: VIEW_MODE.LIST,
 };
 
 export const InventoryStore = signalStore(
@@ -81,7 +82,7 @@ export const InventoryStore = signalStore(
     },
 
     sortBy(columnName: string): void {
-      const ascending = store.sortByColumn() !== columnName;
+      const ascending = store.sortByColumn() !== columnName || store.sortAscending() === false;
 
       patchState(store, {
         sortByColumn: columnName,
@@ -140,6 +141,10 @@ export const InventoryStore = signalStore(
     setCreatePanelVisible(value: boolean): void {
       patchState(store, { isCreatePanelVisible: value });
     },
+
+    setViewMode(viewMode: VIEW_MODE ): void {
+      patchState(store, { viewMode });
+    }
   })),
   withHooks({
     onInit(store) {

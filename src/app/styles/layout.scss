@@ -1,0 +1,125 @@
+.flex {
+    display: flex;
+
+    &.row {
+        flex-direction: row;
+
+        &.center-y {
+            align-items: center;
+        }
+    }
+    
+    &.col {
+        flex-direction: column;
+    }
+
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.gap {
+        &-xs {
+            gap: 0.5em;
+        }
+        &-s {
+            gap: 1em;
+        }
+        &-m {
+            gap: 2em;
+        } 
+        &-l {
+            gap: 3em;
+        }
+    }
+}
+
+.p-x {
+    &-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &-s {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    &-m {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    &-l {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    &-xl {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    &-xxl {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+    &-xxxl {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+}
+
+.p-y {
+    &-0 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &-s {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+    &-m {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    &-l {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    &-xl {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+    &-xxl {
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    &-xxxl {
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}
+
+.m-bottom {
+    &-s {
+        margin-bottom: 0.5em;
+    }
+    &-m {
+        margin-bottom: 1em;
+    }
+    &-l {
+        margin-bottom: 2em;
+    }
+    &-xl {
+        margin-bottom: 3em;
+    }
+}
+
+.interactive {
+    cursor: pointer;
+}
+
+/* Elevations shadows */
+.z-1 {
+    box-shadow: 0px 3px 6px #00000029;
+}

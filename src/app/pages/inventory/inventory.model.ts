@@ -16,4 +16,10 @@ export type InventoryStoreState = {
   sortAscending: boolean;
   searchByName: string;
   isCreatePanelVisible: boolean;
+  viewMode: VIEW_MODE;
 };
+
+export enum VIEW_MODE {
+  LIST = 'LIST',
+  TILES = 'TILES',
+}

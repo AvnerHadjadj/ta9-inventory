@@ -12,7 +12,7 @@ import { RouterLink } from "@angular/router";
       Take me home
     </a>
   `,
-  styleUrl: "./not-found.component.scss",
+  styleUrl: "./not-found.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class NotFoundComponent {}

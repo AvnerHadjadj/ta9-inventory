@@ -5,7 +5,7 @@ export const routes: Routes = [
     { path: "inventory", loadChildren: () => import("./pages/inventory/inventory.routes") },
     {
         path: "**",
-        loadComponent: () => import("./core/not-found/not-found.component"),
+        loadComponent: () => import("./core/not-found/not-found"),
         title: "Not Found",
     },
 ];
