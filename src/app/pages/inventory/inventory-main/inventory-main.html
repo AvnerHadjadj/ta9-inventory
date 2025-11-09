@@ -7,7 +7,7 @@
                 (click)="store.setViewMode(VIEW_MODE.LIST)" />
             <ta9-icon iconName="tiles-view" [active]="store.viewMode() === VIEW_MODE.TILES"
                 (click)="store.setViewMode(VIEW_MODE.TILES)" />
-            <ta9-icon iconName="plus-rounded" (click)="addEvent()" />
+            <ta9-icon iconName="plus-rounded" (click)="openSideDrawer()" />
         </div>
     </div>
 
@@ -16,9 +16,13 @@
         [columns]="eventColumns"
         [searchFilterValue]="store.searchByName()"
         [viewMode]="store.viewMode()"
+        [pageSize]="store.pageSize()"
+        [currentPage]="store.currentPage()"
         [sortByColumn]="store.sortByColumn()"
         (searchFilter)="store.setSearchByName($event)"
-        (sortBy)="store.sortBy($event)">
+        (sortBy)="store.sortBy($event)"
+        (pageSelected)="store.goToPage($event)"
+        (pageSizeChanged)="store.setPageSize($event)">
 
         <!-- Pass the tile view item template -->
         <ng-template #tileViewItemTemplate let-item let-id="index">

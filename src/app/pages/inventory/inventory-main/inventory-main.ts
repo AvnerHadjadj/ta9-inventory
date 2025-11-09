@@ -7,6 +7,7 @@ import { GridListCellDef, VIEW_MODE } from '../../../core/grid/grid.model';
 import { InventoryEvent } from '../inventory.model';
 import { ColorCell } from '../../../core/grid/custom-cells/color-cell/color-cell';
 import { ColorNameTile } from '../../../core/grid/custom-tiles/color-name-tile/color-name-tile';
+import { DateCell } from '../../../core/grid/custom-cells/date-cell/date-cell';
 
 @Component({
   selector: 'ta9-inventory-main',
@@ -28,12 +29,12 @@ export default class InventoryMain {
   eventColumns: GridListCellDef<InventoryEvent>[] = [
     { field: 'color',         header: 'Color',        widthPercentage: 10, customCell: { component: ColorCell } },
     { field: 'name',          header: 'Name',         widthPercentage: 40 },
-    { field: 'createdAt',     header: 'Create Date',  widthPercentage: 15 },
-    { field: 'lastUpdatedAt', header: 'Last Update',  widthPercentage: 15 },
+    { field: 'createdAt',     header: 'Create Date',  widthPercentage: 15, customCell: { component: DateCell } },
+    { field: 'lastUpdatedAt', header: 'Last Update',  widthPercentage: 15, customCell: { component: DateCell } },
     { field: 'createdBy',     header: 'Created By',   widthPercentage: 20 }
   ];
 
-  addEvent() {
+  openSideDrawer() {
     this.store.createNewEvent('#000000', 'New Event', '');
   }
 }

@@ -1,8 +1,8 @@
-<div class="tile-wrapper flex col gap-s z-1 bg-white">
-    <div class="flex row center p-y-m">
-        <div class="p-x-xl p-y-xl" [style.background-color]="color()"></div>
+<div class="tile-wrapper flex col z-1 bg-white">
+    <div class="flex row center p-y-m color-wrapper">
+        <div class="color-square" [style.background-color]="color()"></div>
     </div>
-    <div class="bg-light flex row center p-y-m">
-        <span class="ta9-character-style-4 ellipsis">{{ name() }}</span>
+    <div class="bg-light flex row center name-wrapper">
+        <span class="name ellipsis">{{ name() }}</span>
     </div>
 </div>

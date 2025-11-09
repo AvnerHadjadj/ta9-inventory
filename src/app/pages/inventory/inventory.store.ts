@@ -14,7 +14,7 @@ import { VIEW_MODE } from '../../core/grid/grid.model';
 const initialState: InventoryStoreState = {
   events: [],
   currentPage: 1,
-  pageSize: 10,
+  pageSize: 2,
   sortByColumn: 'name',
   sortAscending: true,
   searchByName: '',
@@ -53,16 +53,6 @@ export const InventoryStore = signalStore(
       return events;
     });
 
-    const currentPageEvents = computed(() => {
-      const processed = processedEvents();
-      const page = store.currentPage();
-      const size = store.pageSize();
-      const startIndex = (page - 1) * size;
-      const endIndex = startIndex + size;
-
-      return processed.slice(startIndex, endIndex);
-    });
-
     const pageNumbers = computed(() => {
       const processed = processedEvents();
       const size = store.pageSize();
@@ -73,7 +63,6 @@ export const InventoryStore = signalStore(
 
     return {
       processedEvents,
-      currentPageEvents,
       pageNumbers,
     };
   }),
@@ -145,6 +134,10 @@ export const InventoryStore = signalStore(
 
     setViewMode(viewMode: VIEW_MODE ): void {
       patchState(store, { viewMode });
+    },
+
+    setPageSize(size: number): void {
+      patchState(store, { pageSize: size, currentPage: 1 });
     }
   })),
   withHooks({

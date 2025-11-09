@@ -26,35 +26,15 @@
     </div>
 
 
-    @for (item of processedData(); track item.id) {
+    @for (item of currentPageItems(); track item.id) {
 
-    <div class="flex row center-y p-y-m list-item z-1 clickable bg-white" (click)="selectItem.emit(item)">
-
-        <!-- <div class="cell" [style.width.%]="eventColumns[0].widthPercentage">
-            <div class="cell-color" [style.background-color]="event.color"></div>
-        </div>
-
-        <div class="cell hightlight" [style.width.%]="eventColumns[1].widthPercentage">
-            {{ event.name }}
-        </div>
-
-        <div class="cell" [style.width.%]="eventColumns[2].widthPercentage">
-            {{ event.createdAt | date:'short' }}
-        </div>
-
-        <div class="cell" [style.width.%]="eventColumns[3].widthPercentage">
-            {{ event.lastUpdatedAt | date:'short' }}
-        </div>
-
-        <div class="cell" [style.width.%]="eventColumns[4].widthPercentage">
-            {{ event.createdBy }}
-        </div> -->
+    <div class="flex row center-y p-y-m list-item z-1 interactive bg-white" (click)="selectItem.emit(item)">
 
         @for (col of columns(); track col.field) {
             <div class="cell" [style.width.%]="col.widthPercentage">
 
             @if(col.customCell) {
-            <ng-container *ngComponentOutlet="col.customCell.component; inputs: {item};" />
+            <ng-container *ngComponentOutlet="col.customCell.component; inputs: {field: col.field, item, value: item[col.field]};" />
             }
             @else {
                 {{ item[col.field] }}
@@ -71,7 +51,7 @@
 <!-- Tiles view -->
 @else {
 <div class="flex row wrap gap-s evenly-x">
-    @for (item of processedData(); track item.id) {
+    @for (item of currentPageItems(); track item.id) {
     <div class="flex col center gap-s">
 
         <!-- Render given tileViewItemTemplate for each tile -->
@@ -82,6 +62,12 @@
     </div>
     }
 </div>
-
-
 }
+
+<!-- Pagination -->
+<ta9-grid-pagination
+    [totalPages]="totalPages()"
+    [currentPage]="currentPage()"
+    [pageSize]="pageSize()"
+    (pageChange)="pageSelected.emit($event)"
+    (pageSizeChange)="pageSizeChanged.emit($event)" />

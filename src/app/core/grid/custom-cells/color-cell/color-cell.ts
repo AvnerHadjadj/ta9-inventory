@@ -8,5 +8,5 @@ import { Component, input } from '@angular/core';
   standalone: true,
 })
 export class ColorCell<T> {
-  item = input<T & { color: string }>(null as any);
+  readonly value = input<string>();
 }

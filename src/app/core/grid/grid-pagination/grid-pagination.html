@@ -1,0 +1,26 @@
+<div class="flex row gap-xs evenly-x p-y-l">
+    <div class="flex row gap-s">
+            
+        <span>Page:</span>
+        @for(pageNum of pageNumbers(); track pageNum) {
+        <button class="secondary z-1 interactive"
+            [disabled]="pageNum === currentPage()"
+            (click)="pageChange.emit(pageNum)">
+            {{ pageNum }}
+        </button>
+        }
+
+    </div>
+    <div class="flex">
+
+        <span>Items per page:</span>
+        @for(pageSizeOption of pageSizeOptions; track pageSizeOption) {
+        <button class="secondary z-1 interactive"
+            [disabled]="pageSizeOption === pageSize()"
+            (click)="pageSizeChange.emit(pageSizeOption)">
+            {{ pageSizeOption }}
+        </button>
+        }
+
+    </div>
+</div>

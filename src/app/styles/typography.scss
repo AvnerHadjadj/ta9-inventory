@@ -30,44 +30,40 @@
 } 
 
 /* Character Styles */
-.ta9-character-style-1 {
+@mixin ta9-character-style-1 {
     font-family:        var(--ta9-font-family-helvetica-neue);
     font-style:         var(--ta9-font-style-normal);
     font-weight:        var(--ta9-font-weight-300);
     font-size:          var(--ta9-font-size-20);
     line-height:        var(--ta9-line-spacing-24);
     letter-spacing:     var(--ta9-character-spacing-0);
-    // color:              var(--ta9-color-000000);
 }
 
-.ta9-character-style-2 {
+@mixin ta9-character-style-2 {
     font-family:        var(--ta9-font-family-helvetica-neue);
     font-style:         var(--ta9-font-style-normal);
     font-weight:        var(--ta9-font-weight-bold);
     font-size:          var(--ta9-font-size-20);
     line-height:        var(--ta9-line-spacing-25);
     letter-spacing:     var(--ta9-character-spacing-0);
-    // color:              var(--ta9-color-007af9);
 }
 
-.ta9-character-style-3 {
+@mixin ta9-character-style-3 {
     font-family:        var(--ta9-font-family-helvetica-neue);
     font-style:         var(--ta9-font-style-normal);
     font-weight:        var(--ta9-font-weight-300);
     font-size:          var(--ta9-font-size-20);
     line-height:        var(--ta9-line-spacing-24);
     letter-spacing:     var(--ta9-character-spacing-0);
-    // color:              var(--ta9-color-797979);
 }
 
-.ta9-character-style-4 {
+@mixin ta9-character-style-4 {
     font-family:        var(--ta9-font-family-helvetica-neue);
     font-style:         var(--ta9-font-style-normal);
     font-weight:        var(--ta9-font-weight-normal);
     font-size:          var(--ta9-font-size-16);
     line-height:        var(--ta9-line-spacing-18);
     letter-spacing:     var(--ta9-character-spacing-0);
-    // color:              var(--ta9-color-000000);
 }
 
 @mixin ta9-character-style-5 {
@@ -79,12 +75,11 @@
     letter-spacing:     var(--ta9-character-spacing-0);
 }
 
-.ta9-character-style-6 {
+@mixin ta9-character-style-6 {
     font-family:        var(--ta9-font-family-helvetica-neue);
     font-style:         var(--ta9-font-style-normal);
     font-weight:        var(--ta9-font-weight-medium);
     font-size:          var(--ta9-font-size-20);
     line-height:        var(--ta9-line-spacing-25);
     letter-spacing:     var(--ta9-character-spacing-0);
-    // color:              var(--ta9-color-0e4f6e);
 }

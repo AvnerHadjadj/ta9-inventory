@@ -1,19 +1,47 @@
+@use '../../../../styles/typography.scss' as *;
+
 :host {
 
-        width: 12.5em;
-        height: 12.5em;
-        
+    width: 12.75em;
+    height: 13.0625em;
+
     .tile-wrapper {
         
         border: 0.125em solid transparent;
-        border-radius: 0.25em;
         transition: 0.3s ease-out;
 
+        .color-wrapper {
+            height: 10.25em;
+
+            .color-square {
+                width: 6.25em;
+                height: 6.25em;
+                border-radius: 0.5em;
+            }
+        }
+
+        .name-wrapper {
+            height: 2.8125em;
+        }
+
+        .name {
+            @include ta9-character-style-4;
+            color: var(--ta9-color-000000);
+        }
+
+        .color-square, .name {
+            transition: 0.3s ease-out;
+        }
+        
         &:hover {
             border-color: var(--ta9-color-interactive-selected);
 
-            .hightlight {
-                font-weight: bold;
+            .color-square {
+                transform: scale(1.19);
+            }
+
+            .name {
+                @include ta9-character-style-2;
                 color: var(--ta9-color-interactive-selected);
             }
         }
