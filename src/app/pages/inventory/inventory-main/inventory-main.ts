@@ -20,7 +20,6 @@ import { InventoryItemForm } from '../inventory-item-form/inventory-item-form';
     InventoryItemForm
   ],
   templateUrl: './inventory-main.html',
-  styleUrl: './inventory-main.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

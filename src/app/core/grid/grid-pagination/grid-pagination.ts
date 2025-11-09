@@ -5,6 +5,7 @@ import { Component, computed, input, output } from '@angular/core';
   imports: [],
   templateUrl: './grid-pagination.html',
   styleUrl: './grid-pagination.scss',
+  standalone: true,
 })
 export class GridPagination {
 

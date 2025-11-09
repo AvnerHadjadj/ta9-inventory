@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { InventoryEvent } from './inventory.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 const API_URL = "/mock-events.json";
 

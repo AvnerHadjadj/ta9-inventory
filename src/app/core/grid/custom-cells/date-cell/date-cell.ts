@@ -6,7 +6,7 @@ import { BaseCustomCell } from '../base-custom-cell';
   selector: 'ta9-date-cell',
   imports: [DatePipe],
   templateUrl: './date-cell.html',
-  styleUrl: './date-cell.scss',
+  standalone: true,
 })
 export class DateCell<T> extends BaseCustomCell<T> {
   readonly value = input<string>();

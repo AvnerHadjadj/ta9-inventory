@@ -5,6 +5,7 @@ import { Component, input } from '@angular/core';
   imports: [],
   templateUrl: './color-name-tile.html',
   styleUrl: './color-name-tile.scss',
+  standalone: true,
 })
 export class ColorNameTile {
   readonly color = input<string>('');

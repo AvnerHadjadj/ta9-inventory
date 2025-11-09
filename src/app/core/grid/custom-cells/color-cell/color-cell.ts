@@ -3,7 +3,6 @@ import { BaseCustomCell } from '../base-custom-cell';
 
 @Component({
   selector: 'ta9-color-cell',
-  imports: [],
   templateUrl: './color-cell.html',
   styleUrl: './color-cell.scss',
   standalone: true,
