@@ -1,0 +1,7 @@
+<label for="searchByName" class="flex row center-y gap-s interactive z-1 m-bottom-xl">
+
+    <ta9-icon iconName="search" />
+
+    <input type="text" id="searchByName" class="interactive" placeholder="Find by name..."
+        [value]="searchFilterValue()" (input)="searchFilter.emit($event.target.value)" />
+</label>

@@ -1,0 +1,3 @@
+- fix icon sizes (sort arrow)
+- fix typography kinds
+- add unit tests

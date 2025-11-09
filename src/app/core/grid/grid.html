@@ -1,0 +1,87 @@
+<!-- Search Filter -->
+@if(isSearchable() === true) {
+    <ta9-grid-search-filter
+        [searchFilterValue]="searchFilterValue()"
+        (searchFilter)="searchFilter.emit($event)" />
+}
+
+<!-- List view -->
+@if(viewMode() === VIEW_MODE.LIST) {
+<div class="flex col list gap-s">
+    <div class="flex row list-headers">
+        @for (col of columns(); track col.field) {
+
+        <div class="flex row gap-xs center-y interactive" (click)="sortBy.emit(col.field)"
+            [style.width.%]="col.widthPercentage">
+
+            @if(sortByColumn() === col.field) {
+            <ta9-icon class="sort-icon" iconName="sort-arrow-up" [style.rotate.deg]="sortAscending() ? 0 : 180" />
+            }
+
+            <span>{{ col.header }}</span>
+
+        </div>
+
+        }
+    </div>
+
+
+    @for (item of processedData(); track item.id) {
+
+    <div class="flex row center-y p-y-m list-item z-1 clickable bg-white" (click)="selectItem.emit(item)">
+
+        <!-- <div class="cell" [style.width.%]="eventColumns[0].widthPercentage">
+            <div class="cell-color" [style.background-color]="event.color"></div>
+        </div>
+
+        <div class="cell hightlight" [style.width.%]="eventColumns[1].widthPercentage">
+            {{ event.name }}
+        </div>
+
+        <div class="cell" [style.width.%]="eventColumns[2].widthPercentage">
+            {{ event.createdAt | date:'short' }}
+        </div>
+
+        <div class="cell" [style.width.%]="eventColumns[3].widthPercentage">
+            {{ event.lastUpdatedAt | date:'short' }}
+        </div>
+
+        <div class="cell" [style.width.%]="eventColumns[4].widthPercentage">
+            {{ event.createdBy }}
+        </div> -->
+
+        @for (col of columns(); track col.field) {
+            <div class="cell" [style.width.%]="col.widthPercentage">
+
+            @if(col.customCell) {
+            <ng-container *ngComponentOutlet="col.customCell.component; inputs: {item};" />
+            }
+            @else {
+                {{ item[col.field] }}
+            }
+
+            </div>
+        }
+    </div>
+
+    }
+</div>
+}
+
+<!-- Tiles view -->
+@else {
+<div class="flex row wrap gap-s evenly-x">
+    @for (item of processedData(); track item.id) {
+    <div class="flex col center gap-s">
+
+        <!-- Render given tileViewItemTemplate for each tile -->
+        <ng-container
+            [ngTemplateOutlet]="tileViewItemTemplateRef()"
+            [ngTemplateOutletContext]="{ $implicit: item, index: item.id }" />
+
+    </div>
+    }
+</div>
+
+
+}

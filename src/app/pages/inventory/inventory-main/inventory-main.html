@@ -11,70 +11,18 @@
         </div>
     </div>
 
-    <label for="searchByName" class="flex row center-y gap-s interactive z-1 m-bottom-xl">
+    <ta9-grid
+        [processedData]="store.processedEvents()"
+        [columns]="eventColumns"
+        [searchFilterValue]="store.searchByName()"
+        [viewMode]="store.viewMode()"
+        [sortByColumn]="store.sortByColumn()"
+        (searchFilter)="store.setSearchByName($event)"
+        (sortBy)="store.sortBy($event)">
 
-        <ta9-icon iconName="search" />
-
-        <input type="text" id="searchByName" class="interactive" placeholder="Find by name..."
-            [value]="store.searchByName()" (input)="store.setSearchByName($event.target.value)" />
-    </label>
-
-    @if(store.viewMode() === VIEW_MODE.LIST) {
-    <div class="flex col list gap-s">
-        <div class="flex row list-headers">
-            @for (col of eventColumns; track col.field) {
-
-            <div class="flex row gap-xs center-y interactive" (click)="store.sortBy(col.field)"
-                [style.width.%]="col.widthPercentage">
-
-                @if(store.sortByColumn() === col.field) {
-                <ta9-icon class="sort-icon" iconName="sort-arrow-up"
-                    [style.rotate.deg]="store.sortAscending() ? 0 : 180" />
-                }
-
-                <span>{{ col.header }}</span>
-
-            </div>
-
-            }
-        </div>
-
-
-        @for (event of store.processedEvents(); track event.id) {
-
-        <div class="flex row center-y p-y-m list-item z-1">
-
-            <div class="cell" [style.width.%]="eventColumns[0].widthPercentage">
-                <div class="cell-color" [style.background-color]="event.color"></div>
-            </div>
-
-            <div class="cell hightlight" [style.width.%]="eventColumns[1].widthPercentage">
-                {{ event.name }}
-            </div>
-
-            <div class="cell" [style.width.%]="eventColumns[2].widthPercentage">
-                {{ event.createdAt | date:'short' }}
-            </div>
-
-            <div class="cell" [style.width.%]="eventColumns[3].widthPercentage">
-                {{ event.lastUpdatedAt | date:'short' }}
-            </div>
-
-            <div class="cell" [style.width.%]="eventColumns[4].widthPercentage">
-                {{ event.createdBy }}
-            </div>
-        </div>
-
-        }
-    </div>
-    } @else {
-    <div class="flex row wrap gap-m tiles">
-        @for (event of store.processedEvents(); track event.id) {
-        <div class="flex col center gap-s p-x-m p-y-m">
-            <input type="color" [value]="event.color" disabled />
-            <h2 class="ta9-character-style-7">{{ event.name }}</h2>
-        </div>
-        }
-    </div>
-    }
+        <!-- Pass the tile view item template -->
+        <ng-template #tileViewItemTemplate let-item let-id="index">
+            <ta9-color-name-tile [color]="item.color" [name]="item.name" />
+        </ng-template>
+    </ta9-grid>
 </div>

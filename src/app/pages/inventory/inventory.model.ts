@@ -1,5 +1,7 @@
+import { VIEW_MODE } from "../../core/grid/grid.model";
+
 export type InventoryEvent = {
-  id: number;
+  id: string;
   color: string;
   name: string;
   description: string;
@@ -18,8 +20,3 @@ export type InventoryStoreState = {
   isCreatePanelVisible: boolean;
   viewMode: VIEW_MODE;
 };
-
-export enum VIEW_MODE {
-  LIST = 'LIST',
-  TILES = 'TILES',
-}

@@ -8,7 +8,8 @@ import {
   withState,
 } from '@ngrx/signals';
 import { InventoryService } from './inventory-service';
-import { InventoryEvent, InventoryStoreState, VIEW_MODE } from './inventory.model';
+import { InventoryEvent, InventoryStoreState } from './inventory.model';
+import { VIEW_MODE } from '../../core/grid/grid.model';
 
 const initialState: InventoryStoreState = {
   events: [],
@@ -93,11 +94,11 @@ export const InventoryStore = signalStore(
     createNewEvent(color: string, name: string, description: string): void {
       const currentEvents = store.events();
       const maxId = currentEvents.length > 0
-        ? Math.max(...currentEvents.map((e) => e.id))
+        ? Math.max(...currentEvents.map((e) => Number(e.id)))
         : 0;
 
       const newEvent: InventoryEvent = {
-        id: maxId + 1,
+        id: (maxId + 1).toString(),
         color,
         name,
         description,
@@ -114,7 +115,7 @@ export const InventoryStore = signalStore(
     },
 
     updateEvent(
-      id: number,
+      id: string,
       color: string,
       name: string,
       description: string

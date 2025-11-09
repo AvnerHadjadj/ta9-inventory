@@ -1,0 +1,22 @@
+:host {
+
+        width: 12.5em;
+        height: 12.5em;
+        
+    .tile-wrapper {
+        
+        border: 0.125em solid transparent;
+        border-radius: 0.25em;
+        transition: 0.3s ease-out;
+
+        &:hover {
+            border-color: var(--ta9-color-interactive-selected);
+
+            .hightlight {
+                font-weight: bold;
+                color: var(--ta9-color-interactive-selected);
+            }
+        }
+
+    }
+}

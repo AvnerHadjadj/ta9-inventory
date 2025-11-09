@@ -34,7 +34,7 @@ const ICONS_SVG: Record<string, string> = {
     `,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class IconComponent {
+export default class Icon {
     readonly iconName   = input<string>('');
     readonly active     = input<boolean>(false);
 
