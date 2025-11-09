@@ -3,11 +3,20 @@
         <h1 class="ta9-character-style-6">Management Tool</h1>
 
         <div class="flex row center gap-s">
-            <ta9-icon iconName="list-view" [active]="store.viewMode() === VIEW_MODE.LIST"
+            <ta9-icon 
+                class="interactive"
+                iconName="list-view"
+                [active]="store.viewMode() === VIEW_MODE.LIST"
                 (click)="store.setViewMode(VIEW_MODE.LIST)" />
-            <ta9-icon iconName="tiles-view" [active]="store.viewMode() === VIEW_MODE.TILES"
+            <ta9-icon 
+                class="interactive"
+                iconName="tiles-view"
+                [active]="store.viewMode() === VIEW_MODE.TILES"
                 (click)="store.setViewMode(VIEW_MODE.TILES)" />
-            <ta9-icon iconName="plus-rounded" (click)="openSideDrawer()" />
+            <ta9-icon 
+                class="interactive"
+                iconName="plus-rounded"
+                (click)="this.openNewItem()" />
         </div>
     </div>
 
@@ -22,7 +31,8 @@
         (searchFilter)="store.setSearchByName($event)"
         (sortBy)="store.sortBy($event)"
         (pageSelected)="store.goToPage($event)"
-        (pageSizeChanged)="store.setPageSize($event)">
+        (pageSizeChanged)="store.setPageSize($event)"
+        (selectItem)="this.openEditItem($event)">
 
         <!-- Pass the tile view item template -->
         <ng-template #tileViewItemTemplate let-item let-id="index">
@@ -30,3 +40,10 @@
         </ng-template>
     </ta9-grid>
 </div>
+
+<ta9-inventory-item-form
+    class="flex col fill"
+    [class.visible]="store.isCreatePanelVisible()"
+    [item]="store.selectedItem()"
+    (closeForm)="store.setCreatePanelVisible(false)"
+    (saveItem)="store.saveItem($event)" />

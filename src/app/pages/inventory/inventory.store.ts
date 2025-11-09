@@ -20,6 +20,7 @@ const initialState: InventoryStoreState = {
   searchByName: '',
   isCreatePanelVisible: false,
   viewMode: VIEW_MODE.LIST,
+  selectedItem: null,
 };
 
 export const InventoryStore = signalStore(
@@ -121,7 +122,10 @@ export const InventoryStore = signalStore(
           : event
       );
 
-      patchState(store, { events: updatedEvents });
+      patchState(store, {
+        events: updatedEvents,
+        isCreatePanelVisible: false
+      });
     },
 
     setSearchByName(name: string): void {
@@ -138,6 +142,18 @@ export const InventoryStore = signalStore(
 
     setPageSize(size: number): void {
       patchState(store, { pageSize: size, currentPage: 1 });
+    },
+
+    setSelectedItem(item: InventoryEvent | null): void {
+      patchState(store, { selectedItem: item });
+    },
+
+    saveItem(item: InventoryEvent): void {
+      if (item.id) {
+        this.updateEvent(item.id, item.color, item.name, item.description);
+      } else {
+        this.createNewEvent(item.color, item.name, item.description);
+      }
     }
   })),
   withHooks({

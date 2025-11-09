@@ -1,10 +1,12 @@
+@use 'typography.scss' as *;
+
 .interactive {
     cursor: pointer;
 }
 
 /* Elevations shadows */
 .z-1 {
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: var(--ta9-shadow-1);
 }
 
 /* Background Styles */
@@ -20,4 +22,54 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Form Elements */
+input.textbox {
+    opacity: 1;
+    border: none;
+    height: 2.625em;
+    appearance: none;
+    border-radius: 0.375em;
+    box-shadow: var(--ta9-shadow-1);
+    background: var(--ta9-color-ffffff);
+    padding: 0.5em;
+}
+
+textarea.textbox {
+    opacity: 1;
+    border: none;
+    appearance: none;
+    border-radius: 0.375em;
+    box-shadow: var(--ta9-shadow-1);
+    background: var(--ta9-color-ffffff);
+    padding: 0.5em;
+    resize: vertical;
+    min-height: 8.125em;
+}
+
+button.button-primary {
+    @include ta9-character-style-4;
+    background-color: var(--ta9-color-2BAE6D);
+    border: none;
+    color: var(--ta9-color-ffffff);
+    font-variant-caps: all-small-caps;
+    height: 2.875em;
+    appearance: none;
+    border-radius: 0.375em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+button.button-secondary {
+    @include ta9-character-style-4;
+    background-color: transparent;
+    border: 1px solid var(--ta9-color-707070);
+    color: var(--ta9-color-707070);
+    font-variant-caps: all-small-caps;
+    height: 2.875em;
+    appearance: none;
+    border-radius: 0.375em;
+    padding: 0.5em 1em;
+    cursor: pointer;
 }

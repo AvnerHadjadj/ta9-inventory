@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { BaseCustomCell } from '../base-custom-cell';
 
 @Component({
   selector: 'ta9-date-cell',
@@ -7,6 +8,6 @@ import { Component, input } from '@angular/core';
   templateUrl: './date-cell.html',
   styleUrl: './date-cell.scss',
 })
-export class DateCell<T> {
+export class DateCell<T> extends BaseCustomCell<T> {
   readonly value = input<string>();
 }

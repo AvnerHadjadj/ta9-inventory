@@ -2,14 +2,17 @@
 
     /* Colors */
     --ta9-color-ffffff: #FFFFFF;
+    --ta9-color-f8f8f8: #F8F8F8;
     --ta9-color-f6f6f6: #F6f6f6;
     --ta9-color-cbcbcb: #CBCBCB;
     --ta9-color-797979: #797979;
+    --ta9-color-707070: #707070;
     --ta9-color-000000: #000000;
     --ta9-color-0e4f6e: #0E4F6E;
     --ta9-color-749aac: #749AAC;
     --ta9-color-007af9: #007AF9;
     --ta9-color-f2f6f9: #F2F6F9;
+    --ta9-color-2BAE6D: #2BAE6D;
 
     --ta9-color-interactive-idle:       var(--ta9-color-749aac);
     --ta9-color-interactive-selected:   var(--ta9-color-007af9);
@@ -32,4 +35,7 @@
     --ta9-line-spacing-22: 22px;
     --ta9-line-spacing-24: 24px;
     --ta9-line-spacing-25: 25px;
+
+    /* Shadow */
+    --ta9-shadow-1: 0px 3px 6px #00000029;
 }

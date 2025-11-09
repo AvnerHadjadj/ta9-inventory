@@ -19,4 +19,5 @@ export type InventoryStoreState = {
   searchByName: string;
   isCreatePanelVisible: boolean;
   viewMode: VIEW_MODE;
+  selectedItem: InventoryEvent | null;
 };

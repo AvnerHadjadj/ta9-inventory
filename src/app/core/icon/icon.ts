@@ -7,6 +7,7 @@ const ICONS_SVG: Record<string, string> = {
     'search':           `<svg width="28.362" height="29.633"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3" transform="rotate(12 2.402 22.858)"><circle cx="11.555" cy="11.555" r="11.555" stroke="none"/><circle cx="11.555" cy="11.555" r="10.055"/></g><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3.00075" d="m25.957 26.584-4.606-4.856" data-name="Line 3"/></svg>`,
     'sort-arrow-up':    `<svg width="4.603" height="12.275"><path fill="currentColor" d="M4.454 1.94 2.664.15a.511.511 0 0 0-.723 0L.15 1.94a.511.511 0 1 0 .723.723l.917-.917v10.018a.511.511 0 0 0 1.023 0V1.746l.917.917a.511.511 0 1 0 .723-.723Z" data-name="Path 1119"/></svg>`,
     'tiles-view':       `<svg width="24" height="22" data-name="Tiles Mode"><path fill="currentColor" d="M13 12h11v10H13z" data-name="Rectangle 533"/><path fill="currentColor" d="M13 0h11v10H13z" data-name="Rectangle 576"/><path fill="currentColor" d="M0 12h11v10H0z" data-name="Rectangle 575"/><path fill="currentColor" d="M0 0h11v10H0z" data-name="Rectangle 577"/></svg>`,
+    'close':            `<svg xmlns="http://www.w3.org/2000/svg" width="37.451" height="37.451"><path fill="#0e4f6e" stroke="#f8f8f8" stroke-width="2" d="m23.005 18.726 6.516 6.516-4.332 4.332-6.516-6.516-6.464 6.463-4.313-4.313 6.464-6.464-6.482-6.482L12.21 7.93l6.48 6.48 6.517-6.515 4.313 4.313Z"/></svg>`,
 }
 
 @Component({

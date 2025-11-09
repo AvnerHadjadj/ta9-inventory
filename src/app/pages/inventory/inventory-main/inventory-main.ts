@@ -8,6 +8,7 @@ import { InventoryEvent } from '../inventory.model';
 import { ColorCell } from '../../../core/grid/custom-cells/color-cell/color-cell';
 import { ColorNameTile } from '../../../core/grid/custom-tiles/color-name-tile/color-name-tile';
 import { DateCell } from '../../../core/grid/custom-cells/date-cell/date-cell';
+import { InventoryItemForm } from '../inventory-item-form/inventory-item-form';
 
 @Component({
   selector: 'ta9-inventory-main',
@@ -15,8 +16,9 @@ import { DateCell } from '../../../core/grid/custom-cells/date-cell/date-cell';
     CommonModule,
     Icon,
     Grid,
-    ColorNameTile
-],
+    ColorNameTile,
+    InventoryItemForm
+  ],
   templateUrl: './inventory-main.html',
   styleUrl: './inventory-main.scss',
   standalone: true,
@@ -34,7 +36,13 @@ export default class InventoryMain {
     { field: 'createdBy',     header: 'Created By',   widthPercentage: 20 }
   ];
 
-  openSideDrawer() {
-    this.store.createNewEvent('#000000', 'New Event', '');
+  public openEditItem(item: InventoryEvent) {
+    this.store.setSelectedItem(item);
+    this.store.setCreatePanelVisible(true);
+  }
+
+  public openNewItem() {
+    this.store.setSelectedItem(null);
+    this.store.setCreatePanelVisible(true);
   }
 }

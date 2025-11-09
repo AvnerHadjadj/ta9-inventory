@@ -1,0 +1,51 @@
+<div class="flex col p-y-s p-x-s fill">
+    <div class="flex row end-x">
+        <ta9-icon iconName="close" class="interactive" (click)="closeForm.emit()" />
+    </div>
+    <div class="flex col fill p-x-l p-y-m">
+        
+        @if(item()?.id) {
+            <h2>Edit</h2>
+        }
+        @else {
+            <h2>Create New</h2>
+        }
+
+        <div class="flex col gap-xs" [formGroup]="formItem">
+            <div class="flex row gap-xs">
+                <label for="itemName" class="flex col fill gap-xs">
+                    <span>Name</span>
+                    <input type="text" id="itemName" formControlName="name" class="textbox"/>
+                </label>
+
+                <label for="itemColor" class="flex col gap-xs">
+                    <span>Color</span>
+
+                    <div class="color-select flex row p-x-s p-y-s z-1 center-y">
+                        <div class="color-square" [style.backgroundColor]="formItem.get('color')?.value"></div>
+                    </div>
+                    <input type="color" id="itemColor" formControlName="color" class="input-color" />
+                </label>
+            </div>
+
+            <div class="flex row">
+                <label for="itemDescription" class="flex col fill gap-xs">
+                    <span>Description</span>
+                    <textarea
+                        class="textbox"
+                        id="itemDescription"
+                        formControlName="description">
+                    </textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="flex col fill"></div>
+
+        <div class="flex row between-x">
+            <button class="button-secondary z-1 interactive" (click)="closeForm.emit()">Cancel</button>
+            <button class="button-primary z-1 interactive" (click)="save()">Save Item</button>
+        </div>
+
+    </div>
+</div>
