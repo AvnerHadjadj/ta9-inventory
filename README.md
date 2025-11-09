@@ -1,3 +1,7 @@
+
+https://github.com/user-attachments/assets/c22c03dd-9fd1-4aea-9c9b-5519ff496d08
+
+
 # Ta9Inventory
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
